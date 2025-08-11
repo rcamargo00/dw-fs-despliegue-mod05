@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
       name: 'Smartwatch V1',
       description: 'Un reloj inteligente con todas las funciones.',
       price: 199.99,
-      imageUrl: 'https://acdn.mitiendanube.com/stores/001/356/861/products/d20-inteligente-reloj-bluetooth-deporte-de-los-hombres-de-smartwatch-con-monitor-de-ritmo-card-aco-b7a48d917e1dba8c2616277497732286-1024-1024.jpg'
+      imageUrl: 'https://ae01.alicdn.com/kf/S29d7ecb5cace47d8ab9332b67cf9a8430.jpg'
     },
     {
       name: 'Auriculares Inalámbricos',
