@@ -1,0 +1,58 @@
+/* Contenedor principal de la tarjeta del producto */
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+/* Efecto de hover para la tarjeta */
+.product-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para la imagen del producto */
+.product-image {
+  /* width: 100%; */
+  width: 400px;
+  height: 400px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+/* Contenedor de la información del producto */
+.product-info {
+  padding: 15px;
+  flex-grow: 1; /* Permite que el contenedor de información ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilos para el nombre del producto */
+.product-info h3 {
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+/* Estilos para la descripción del producto */
+.product-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 15px;
+}
+
+/* Estilos para el precio */
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Un color destacado para el precio */
+  margin-top: auto; /* Empuja el precio hacia la parte inferior del contenedor */
+}
