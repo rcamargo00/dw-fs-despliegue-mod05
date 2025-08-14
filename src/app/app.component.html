@@ -1,8 +1,12 @@
-<!-- <p>its works app.component</p> -->
+<p>its works app.component</p>
 <div id="message">  
   <h1>Proyecto e-commerce (t3) lazy-loading</h1>
   <p>By Rcamargo</p>
-<div class="product-list-container">
+<div>
+  <h1>Catálogo de Productos</h1>
+  <p><a href="add-product/">add product</a></p>
+</div>
+  <div class="product-list-container">
   <div *ngFor="let product of products" class="product-card-wrapper">
     <app-product-card [product]="product"></app-product-card>
   </div>

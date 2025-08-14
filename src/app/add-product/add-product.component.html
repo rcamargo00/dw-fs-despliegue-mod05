@@ -1,0 +1,30 @@
+<div class="add-product-container">
+  <h2>Añadir Nuevo Producto</h2>
+  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre del Producto</label>
+      <input id="name" type="text" formControlName="name" placeholder="Ej. Zapatillas deportivas">
+      <div *ngIf="addProductForm.get('name')?.invalid && (addProductForm.get('name')?.dirty || addProductForm.get('name')?.touched)" class="alert alert-danger">
+        El nombre es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" formControlName="description" placeholder="Ej. Zapatillas de running cómodas y ligeras."></textarea>
+      <div *ngIf="addProductForm.get('description')?.invalid && (addProductForm.get('description')?.dirty || addProductForm.get('description')?.touched)" class="alert alert-danger">
+        La descripción es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Precio</label>
+      <input id="price" type="number" formControlName="price" placeholder="Ej. 75.50">
+      <div *ngIf="addProductForm.get('price')?.invalid && (addProductForm.get('price')?.dirty || addProductForm.get('price')?.touched)" class="alert alert-danger">
+        El precio es obligatorio y debe ser mayor a 0.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="addProductForm.invalid">Añadir Producto</button>
+  </form>
+</div>

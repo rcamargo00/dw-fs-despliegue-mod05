@@ -1,1 +1,14 @@
-<p>find-product works!</p>
+<div class="search-container"> 
+  <!-- <input type="text" [formControl]="searchControl" placeholder="Buscar productos...">  -->
+
+  <div *ngIf="products$ | async as products"> 
+    <ul *ngIf="products.length > 0; else noResults" class="search-results"> 
+      <li *ngFor="let product of products"> 
+        {{ product.name }} - ${{ product.price }} 
+      </li> 
+    </ul> 
+    <ng-template #noResults> 
+      <p class="no-results-message">No se encontraron productos.</p> 
+    </ng-template> 
+  </div> 
+</div>
