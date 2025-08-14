@@ -1,0 +1,15 @@
+
+<div class="product-card">
+  <img 
+    [src]="product.imageUrl" 
+    [alt]="product.name"
+    loading="lazy"     
+    class="product-image"
+  />
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <span class="price">${{ product.price }}</span>
+  </div>
+</div>
+<!-- <p>Cargando product-card</p> -->
