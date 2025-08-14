@@ -23,7 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "dist"
               }
             ],
             "styles": [
@@ -86,7 +86,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "dist"
               }
             ],
             "styles": [
