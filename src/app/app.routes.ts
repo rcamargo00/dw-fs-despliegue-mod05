@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'add-product', loadComponent: () => import('./add-product/add-product.component').then(m => m.AddProductComponent) },
   
   // Y una ruta de "fallback" para manejar URLs no encontradas.
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'browser' }
 ];
 
 @NgModule({
