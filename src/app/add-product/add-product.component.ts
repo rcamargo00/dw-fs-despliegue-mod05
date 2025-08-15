@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators,ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app.routes';
+// import { AppRoutingModule } from '../app.routes';
 // import { ProductService } from '../product.service';
 interface Product {
   id: number;
@@ -14,7 +14,7 @@ interface Product {
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css'],
-  imports: [ReactiveFormsModule,CommonModule,AppRoutingModule]
+  imports: [ReactiveFormsModule,CommonModule]
 })
 export class AddProductComponent implements OnInit {
 

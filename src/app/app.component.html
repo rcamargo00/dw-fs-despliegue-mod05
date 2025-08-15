@@ -1,13 +1,22 @@
-<p>its works app.component</p>
-<div id="message">  
+<!-- <div id="message">  
   <h1>Proyecto e-commerce (t3) lazy-loading</h1>
   <p>By Rcamargo</p>
-<div>
+  -->
+<div> 
   <h1>Catálogo de Productos</h1>
-  <p><a href="add-product/">add product</a></p>
+  
 </div>
-  <div class="product-list-container">
-  <div *ngFor="let product of products" class="product-card-wrapper">
-    <app-product-card [product]="product"></app-product-card>
+<ng-container *ngIf="isUrlProducts(); then Listproducts else addproduct"></ng-container>  
+<ng-template #Listproducts>
+    <div class="product-list-container" >
+      <div *ngFor="let product of products" class="product-card-wrapper">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+</ng-template>
+<ng-template #addproduct>
+  <div>
+    <app-add-product> </app-add-product>
   </div>
-</div>
+</ng-template>  
+  

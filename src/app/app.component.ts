@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductCardComponent } from "./product-card/product-card.component";
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIfContext } from '@angular/common';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms'; // <-- Importa este módulo
+console.log('--- app.component.ts');
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddProductComponent } from "./add-product/add-product.component"; // <-- Importa este módulo
 // import { AddProductComponent } from "./add-product/add-product.component"; // Asegúrate de que la ruta sea correcta
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+// import { FormGroup, FormControl, Validators } from '@angular/forms';
 // import { AppRoutingModule } from './app.routes';
 
 interface Product {
@@ -21,7 +24,7 @@ interface Product {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent, BrowserModule, ReactiveFormsModule],
+  imports: [CommonModule, ProductCardComponent, ReactiveFormsModule, AddProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -29,6 +32,8 @@ interface Product {
 
 
 export class AppComponent implements OnInit{
+  alertMessage = '¡Bienvenido a la tienda de productos electrónicos!';
+  
   title = 'e-commerce';
   products = [
     {
@@ -75,6 +80,7 @@ export class AppComponent implements OnInit{
     }
   ];
   addProductForm: any;
+
   constructor() { }
   searchProducts(term: string): Observable<Product[]> { 
     if (!term.trim()) { 
@@ -87,7 +93,7 @@ export class AppComponent implements OnInit{
     ); 
     return of(filteredProducts); 
   } 
-  ngOnInit(): void { alert('iniciando app')};
+  ngOnInit(): void { };
   // Método para añadir un nuevo producto
   onSubmit(): void {
     if (this.addProductForm.valid) {
@@ -102,5 +108,8 @@ export class AppComponent implements OnInit{
       this.addProductForm.reset();
       alert('Producto añadido con éxito!');
     }
+  }
+  isUrlProducts(): boolean {
+    return window.location.href.includes('products');
   }
 }
